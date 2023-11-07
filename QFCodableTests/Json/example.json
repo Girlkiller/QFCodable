@@ -1,0 +1,167 @@
+{
+    "code": "0",
+    "data": [
+        {
+        "biz": "hot",
+        "data": [{
+                "bannerDataVO": [
+                    {
+                        "id": 72,
+                        "img": "https://earth.welcomecdn.com/img/81c97a4504944aa9b1fb929c1825e946_68183_.png",
+                        "jump": "https://webtest.earth.net/rising-star-act/index.html",
+                        "weight": 11111
+                    },
+                    {
+                        "id": 67,
+                        "img": "https://earth.welcomecdn.com/img/19a486d6972a41c4892f08b3a59b198c_873816_.jpg",
+                        "jump": "earth:///open/game?typ:2",
+                        "weight": 9999
+                    },
+                    {
+                        "id": 68,
+                        "img": "https://earth.welcomecdn.com/img/90e52eaec2c045418935cb9fa05b4682_398452_.jpg",
+                        "jump": "earth:///open/game?typ:1",
+                        "weight": 9999
+                    },
+                    {
+                        "id": 71,
+                        "img": "https://earth.welcomecdn.com/img/b061461e35124d0588276075d0a78f69_344356_.jpg",
+                        "jump": "https://webtest.earth.net/national-war/index.html",
+                        "weight": 123
+                    }],
+                "type": 2
+                },
+                {
+                    "anchorDataVO": {
+                        "aid": 1011589,
+                        "challengeAward": {
+                            "cdTime": 40397976,
+                            "coloredBorder": "https://earth.welcomecdn.com/img/6e3b8fb6ff774ab99c3c06e197e38f16_872385_.png",
+                            "duration": 26387591,
+                            "isChampion": 1
+                        },
+                        "channelType": 0,
+                        "cover": "https://lpfm2-file.welcomecdn.com/cover/625adf2387e64f22850b27594209700b.jpeg",
+                        "hotVal": 152927,
+                        "label": "",
+                        "logo": "https://welcomelogo.welcomecdn.com/web/default_2xlogo.png",
+                        "nick": "常驻推流主播",
+                        "roomStatus": 3,
+                        "ssid": 204535009,
+                        "streamInfo": {
+                            "appid": 1064534720,
+                            "cid": 204535009,
+                            "extend":                             {
+                                "layout": "[{\"mic\":0,\"uid\":69719979302}]",
+                                "uid64": 69719979302
+                            },
+                            "sid": 204535009,
+                            "stream": [
+                                {
+                                    "a_encoderType": 1,
+                                    "a_rate": 24,
+                                    "a_stream_name": "xa_204535009_204535009_0_0_0",
+                                    "extend": {
+                                        "gearInfo": "{\"gear\":2,\"name\":\"高清\",\"seq\":200}",
+                                        "line_infos": "{\"line_addrs\":[{\"line_seq\":1,\"reason\":\"stream_home_cache\",\"cdn_info\":{\"url_id\":1001,\"url\":\"yrts://yrts.earth.net/live/1064534720_xv_204535009_204535009_0_0_0-1064534720_xa_204535009_204535009_0_0_0-0-0-0-0-0-1696910989836259?code:orig\\u0026appi:1064534720\\u0026rts_t:6a7b11c671b8e2792c1e98bd0041a70a\\u0026secre:f9ade379dd6fd7211e2560a819d5fe61\\u0026:1697186920\\u0026stream_ke:1064534720_xv_204535009_204535009_0_0_0\\u0026r_stream_ke:1064534720_xa_204535009_204535009_0_0_0\\u0026channeli:204535009\\u0026mt:1\\u0026line_se:1\\u0026cp_i:1001\\u0026ct:eyJydHNfYXV0aCI6MiwiZGVmX3Bhc3MiOjF9\\u0026:cache\",\"is_p2p\":1,\"json\":\"{\\\"audio_only_flag\\\":\\\"\\\\u0026audio-onl:1\\\"}\",\"report_json\":\"{\\\"reason\\\":\\\"stream_home_cache\\\"}\"},\"weight\":100,\"stage\":\"1696910989836259\"}],\"line_list\":[{\"line_seq\":1,\"line_print_name\":\"线路1\",\"line_print_sort\":1}]}",
+                                        "mix_token": "QVyDjuX9qnJSG1MUYoywE:",
+                                        "mix_ver": 1696911000108880,
+                                        "stage": 1696910989836259
+                                    },
+                                    "pair": 2,
+                                    "v_encoderType": 100,
+                                    "v_rate": 2000,
+                                    "v_stream_name": "xv_204535009_204535009_0_0_0"
+                                }
+                            ],
+                            "wh_ratio": "480:854"
+                        },
+                        "templateId": 100000,
+                        "title": "常驻推流主播的房间",
+                        "userId": "69719979302"
+                    },
+                    "type": 1
+                },
+                {
+                    "anchorDataVO": {
+                        "aid": 1005617,
+                        "channelType": 5,
+                        "cover": "https://lpfm2-file.welcomecdn.com/cover/ce265f72-8c80-4854-b6a4-2bfb7fd4f016Cover.png",
+                        "hotVal": 49452,
+                        "label": "",
+                        "logo": "https://welcomelogo.welcomecdn.com/web/test/1a6a53504df4410d89e264d11d0c33fc",
+                        "nick": "لموسيقار",
+                        "onMicUserInfoList": [
+                            {
+                                "gender": "FEMALE",
+                                "logo": "https://welcomelogo.welcomecdn.com/web/test/1a6a53504df4410d89e264d11d0c33fc",
+                                "uid": 69719580789
+                            },
+                                                        {
+                                "gender": "",
+                                "logo": "https://welcomelogo.welcomecdn.com/web/default_2xlogo.png",
+                                "uid": 69719477778
+                            },
+                                                        {
+                                "gender": "FEMALE",
+                                "logo": "https://welcomelogo.welcomecdn.com/web/test/4e98c368847f450b9ec22274f53819da",
+                                "uid": 69719579980
+                            },
+                                                        {
+                                "logo": "https://welcomelogo.welcomecdn.com/web/test/4e98c368847f450b9ec22274f5381911",
+                                "uid": 69719579901
+                            }
+                        ],
+                        "roomStatus": 3,
+                        "sid": 204535243,
+                        "ssid": 204535243,
+                        "templateId": 100002,
+                        "title": "同频道连麦开播二麦",
+                        "uid": 69719580789
+                    },
+                    "type": 1
+                },
+                                {
+                    "anchorDataVO":  {
+                        "aid": 1002595,
+                        "channelType": 5,
+                        "cover": "https://lpfm2-file.welcomecdn.com/cover/058d85f9269d4cbe9313f2989b59e184.jpeg",
+                        "hotVal": 17760,
+                        "label": "Sing",
+                        "logo": "https://welcomelogo.welcomecdn.com/web/test/56a070fd6a1f4f18a7cf0c4994e96bfa",
+                        "nick": "usejjj",
+                        "onMicUserInfoList": [
+                            {
+                                "gender": "FEMALE",
+                                "logo": "https://welcomelogo.welcomecdn.com/web/test/56a070fd6a1f4f18a7cf0c4994e96bfa",
+                                "uid": 69719581795
+                            }
+                        ],
+                        "roomStatus": 3,
+                        "sid": 204535403,
+                        "ssid": 204535403,
+                        "templateId": 100002,
+                        "title": "جحخهعغفقثصضطكنتالببيسشدظزوةىرؤء",
+                        "uid": 69719581795
+                    },
+                    "type": 1
+                },
+                {
+                    "bannerDataVO":  [
+                        {
+                            "id": 18,
+                            "img": "http://earth.oss-eu-central-1.aliyuncs.com/img/16.9.png",
+                            "jump": "welcome:///channel/request?channelTyp:2&giftI:590103",
+                            "weight": 1
+                        }
+                    ]
+                }
+            ],
+            "id": "",
+            "isLastPage": 1,
+            "moduleType": "hot",
+            "subBiz": "idx"
+        }
+    ],
+    "message": "success"
+} 
