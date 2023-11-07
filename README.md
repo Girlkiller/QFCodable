@@ -1,6 +1,16 @@
 # QFCodable
-A foundation codable widget like system Codable. You can use QFCodable to replace system Codable entirely. QFCodable supports custom behavior, allow you to specify default value for some failed cases not just throw an error. 
+A foundation codable widget like system Codable.
+You can use QFCodable to replace system Codable entirely. 
+QFCodable supports custom behavior, allow you to specify default value for some failed cases not just throw an error. 
 QFCodable also supports to specify different name for the key, and to use specify default value for the failed parsed value or the key not found field. 
+
+
+QFCodable will regard the values below as true value, if you use Bool type to receive these values. You can override this method to custom define your values.
+```
+static func allowedTrueValues() -> [Any]? {
+    [true, 1, "1", "True", "yes"]
+}
+```
 
 
 Example:
