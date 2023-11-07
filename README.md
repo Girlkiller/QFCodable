@@ -58,3 +58,6 @@ if let model = [TestModel].init(from: data) {
     print(model)
 }
 ```
+
+# Usage
+pod 'QFCodable'
