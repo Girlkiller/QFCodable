@@ -18,7 +18,7 @@
 		A63184262AF9D81E0049D32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63184252AF9D81E0049D32E /* Assets.xcassets */; };
 		A63184292AF9D81E0049D32E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63184272AF9D81E0049D32E /* LaunchScreen.storyboard */; };
 		A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C162AF9D9070049D32E /* QFJSONParser.swift */; };
-		A6318C232AF9D9080049D32E /* DRReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* DRReusableResponse.swift */; };
+		A6318C232AF9D9080049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
 		A6318C242AF9D9080049D32E /* QFJSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C192AF9D9070049D32E /* QFJSONError.swift */; };
 		A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */; };
 		A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1C2AF9D9070049D32E /* QFCodable.swift */; };
@@ -91,7 +91,7 @@
 		A631843D2AF9D81F0049D32E /* QFCodableDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableDemoUITests.swift; sourceTree = "<group>"; };
 		A631843F2AF9D81F0049D32E /* QFCodableDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6318C162AF9D9070049D32E /* QFJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONParser.swift; sourceTree = "<group>"; };
-		A6318C182AF9D9070049D32E /* DRReusableResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRReusableResponse.swift; sourceTree = "<group>"; };
+		A6318C182AF9D9070049D32E /* QFReusableResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFReusableResponse.swift; sourceTree = "<group>"; };
 		A6318C192AF9D9070049D32E /* QFJSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONError.swift; sourceTree = "<group>"; };
 		A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Json.swift"; sourceTree = "<group>"; };
 		A6318C1C2AF9D9070049D32E /* QFCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFCodable.swift; sourceTree = "<group>"; };
@@ -216,17 +216,9 @@
 				A6318C192AF9D9070049D32E /* QFJSONError.swift */,
 				A6318C162AF9D9070049D32E /* QFJSONParser.swift */,
 				A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */,
-				A6318C172AF9D9070049D32E /* ReusableResponse */,
+				A6318C182AF9D9070049D32E /* QFReusableResponse.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		A6318C172AF9D9070049D32E /* ReusableResponse */ = {
-			isa = PBXGroup;
-			children = (
-				A6318C182AF9D9070049D32E /* DRReusableResponse.swift */,
-			);
-			path = ReusableResponse;
 			sourceTree = "<group>";
 		};
 		A6318C2C2AF9E0530049D32E /* Json */ = {
@@ -401,7 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6318C232AF9D9080049D32E /* DRReusableResponse.swift in Sources */,
+				A6318C232AF9D9080049D32E /* QFReusableResponse.swift in Sources */,
 				A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */,
 				A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */,
 				A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */,
