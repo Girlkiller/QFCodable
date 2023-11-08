@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     // 1. init from data without error handler
     func decodeDataWithoutErrorHandler(_ data: Data?) {
-        if let model = GLReusableResponse<[GLLiveListResponse]>.init(from: data) {
+        if let model = QFReusableResponse<[GLLiveListResponse]>.init(from: data) {
             print(model)
         }
     }
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     // 2. init from data with error handler
     func decodeDataWithErrorHandler(_ data: Data?) {
         do {
-            if let model = try GLReusableResponse<[GLLiveListResponse]>.init(data: data) {
+            if let model = try QFReusableResponse<[GLLiveListResponse]>.init(data: data) {
                 print(model)
             }
         } catch {
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     // 3. parse data returns a Result
     func decodeDataReturnsResult(_ data: Data?) {
-        let result = GLReusableResponse<[GLLiveListResponse]>.model(from: data)
+        let result = QFReusableResponse<[GLLiveListResponse]>.model(from: data)
         switch result {
         case .success(let success):
             print(success)

@@ -25,7 +25,7 @@ final class QFCodableTests: XCTestCase {
     }
 
     func testDecodeJsonToModel() {
-        let model = GLReusableResponse<[GLLiveListResponse]>.init(from: jsonData)
+        let model = QFReusableResponse<[GLLiveListResponse]>.init(from: jsonData)
         XCTAssertNotNil(model)
         // attention: code in json file is string, and we use Int to receive it in model
         XCTAssertEqual(model?.code, 0)
