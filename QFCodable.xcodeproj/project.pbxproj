@@ -18,7 +18,6 @@
 		A63184262AF9D81E0049D32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63184252AF9D81E0049D32E /* Assets.xcassets */; };
 		A63184292AF9D81E0049D32E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63184272AF9D81E0049D32E /* LaunchScreen.storyboard */; };
 		A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C162AF9D9070049D32E /* QFJSONParser.swift */; };
-		A6318C232AF9D9080049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
 		A6318C242AF9D9080049D32E /* QFJSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C192AF9D9070049D32E /* QFJSONError.swift */; };
 		A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */; };
 		A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1C2AF9D9070049D32E /* QFCodable.swift */; };
@@ -40,6 +39,8 @@
 		A6318C472AFA0C5F0049D32E /* GLAnchorDataVOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C362AF9E0530049D32E /* GLAnchorDataVOModel.swift */; };
 		A6318C492AFA0EA00049D32E /* QFCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63183FC2AF9D7E40049D32E /* QFCodable.framework */; };
 		A6318C4A2AFA0EA00049D32E /* QFCodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A63183FC2AF9D7E40049D32E /* QFCodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A631BA1F2AFB3C040049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
+		A631BA202AFB3C040049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +217,6 @@
 				A6318C192AF9D9070049D32E /* QFJSONError.swift */,
 				A6318C162AF9D9070049D32E /* QFJSONParser.swift */,
 				A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */,
-				A6318C182AF9D9070049D32E /* QFReusableResponse.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -232,6 +232,7 @@
 		A6318C2E2AF9E0530049D32E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6318C182AF9D9070049D32E /* QFReusableResponse.swift */,
 				A6318C2F2AF9E0530049D32E /* GLOnMicUserInfo.swift */,
 				A6318C302AF9E0530049D32E /* GLChallengeAwardVOModel.swift */,
 				A6318C322AF9E0530049D32E /* GLLiveListResponse.swift */,
@@ -393,7 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6318C232AF9D9080049D32E /* QFReusableResponse.swift in Sources */,
 				A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */,
 				A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */,
 				A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */,
@@ -412,6 +412,7 @@
 				A6318C3C2AF9E0530049D32E /* GLLiveStreamInfo.swift in Sources */,
 				A6318C3B2AF9E0530049D32E /* GLLiveListResponse.swift in Sources */,
 				A6318C382AF9E0530049D32E /* GLOnMicUserInfo.swift in Sources */,
+				A631BA202AFB3C040049D32E /* QFReusableResponse.swift in Sources */,
 				A6318C3D2AF9E0530049D32E /* GLBannerDataVOModel.swift in Sources */,
 				A631840C2AF9D7E50049D32E /* QFCodableTests.swift in Sources */,
 				A6318C3F2AF9E0530049D32E /* GLAnchorDataVOModel.swift in Sources */,
@@ -428,6 +429,7 @@
 				A631841D2AF9D81C0049D32E /* AppDelegate.swift in Sources */,
 				A6318C452AFA0C580049D32E /* GLLiveStreamInfo.swift in Sources */,
 				A6318C462AFA0C5B0049D32E /* GLBannerDataVOModel.swift in Sources */,
+				A631BA1F2AFB3C040049D32E /* QFReusableResponse.swift in Sources */,
 				A631841F2AF9D81C0049D32E /* SceneDelegate.swift in Sources */,
 				A6318C442AFA0C550049D32E /* GLLiveListResponse.swift in Sources */,
 				A6318C472AFA0C5F0049D32E /* GLAnchorDataVOModel.swift in Sources */,

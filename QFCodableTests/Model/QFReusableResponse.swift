@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import QFCodable
 
 public struct QFReusableResponse<T: QFCodable>: QFCodable {
     public var code: Int?
