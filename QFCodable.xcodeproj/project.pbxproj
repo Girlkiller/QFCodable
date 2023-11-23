@@ -20,7 +20,7 @@
 		A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C162AF9D9070049D32E /* QFJSONParser.swift */; };
 		A6318C242AF9D9080049D32E /* QFJSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C192AF9D9070049D32E /* QFJSONError.swift */; };
 		A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */; };
-		A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1C2AF9D9070049D32E /* QFCodable.swift */; };
+		A6318C272AF9D9080049D32E /* QFDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1C2AF9D9070049D32E /* QFDecodable.swift */; };
 		A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */; };
 		A6318C292AF9D9080049D32E /* QFJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */; };
 		A6318C372AF9E0530049D32E /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = A6318C2D2AF9E0530049D32E /* example.json */; };
@@ -95,7 +95,7 @@
 		A6318C182AF9D9070049D32E /* QFReusableResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFReusableResponse.swift; sourceTree = "<group>"; };
 		A6318C192AF9D9070049D32E /* QFJSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONError.swift; sourceTree = "<group>"; };
 		A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Json.swift"; sourceTree = "<group>"; };
-		A6318C1C2AF9D9070049D32E /* QFCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFCodable.swift; sourceTree = "<group>"; };
+		A6318C1C2AF9D9070049D32E /* QFDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFDecodable.swift; sourceTree = "<group>"; };
 		A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONValue.swift; sourceTree = "<group>"; };
 		A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONDecoder.swift; sourceTree = "<group>"; };
 		A6318C2D2AF9E0530049D32E /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */,
-				A6318C1C2AF9D9070049D32E /* QFCodable.swift */,
+				A6318C1C2AF9D9070049D32E /* QFDecodable.swift */,
 				A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */,
 				A6318C192AF9D9070049D32E /* QFJSONError.swift */,
 				A6318C162AF9D9070049D32E /* QFJSONParser.swift */,
@@ -396,7 +396,7 @@
 			files = (
 				A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */,
 				A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */,
-				A6318C272AF9D9080049D32E /* QFCodable.swift in Sources */,
+				A6318C272AF9D9080049D32E /* QFDecodable.swift in Sources */,
 				A6318C292AF9D9080049D32E /* QFJSONDecoder.swift in Sources */,
 				A63184012AF9D7E40049D32E /* QFCodable.docc in Sources */,
 				A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */,
@@ -599,6 +599,7 @@
 		A63184112AF9D7E50049D32E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -636,6 +637,7 @@
 		A63184122AF9D7E50049D32E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -721,7 +723,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,7 +752,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

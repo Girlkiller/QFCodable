@@ -7,7 +7,7 @@
 
 @testable import QFCodable
 
-public struct GLChallengeAwardVOModel: QFCodable {
+public struct GLChallengeAwardVOModel: QFDecodable {
     var isChampion: Int?
     var duration: Int?
     var cdTime: Int?

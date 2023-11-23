@@ -7,13 +7,13 @@
 
 @testable import QFCodable
 
-enum OnMicUserGender: String, QFCodable {
+enum OnMicUserGender: String, QFDecodable {
     case male = "MALE"
     case female = "FEMALE"
     case unkown = ""
 }
 
-struct GLOnMicUserInfo: QFCodable {
+struct GLOnMicUserInfo: QFDecodable {
     var uid: Int64
     var logo: String?
     var gender: OnMicUserGender

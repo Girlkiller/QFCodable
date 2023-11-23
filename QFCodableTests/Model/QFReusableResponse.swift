@@ -8,7 +8,7 @@
 import Foundation
 import QFCodable
 
-public struct QFReusableResponse<T: QFCodable>: QFCodable {
+public struct QFReusableResponse<T: QFDecodable>: QFDecodable {
     public var code: Int?
     public var msg: String?
     public var data: T?

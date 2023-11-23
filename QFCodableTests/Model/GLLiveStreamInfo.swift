@@ -7,7 +7,7 @@
 
 @testable import QFCodable
 
-struct GLLiveStreamInfo: QFCodable {
+struct GLLiveStreamInfo: QFDecodable {
     var appid: Int?
     var cid: Int?
     var sid: Int?
@@ -16,8 +16,8 @@ struct GLLiveStreamInfo: QFCodable {
     var extend: GLLiveStreamExtend?
 }
 
-struct GLLiveStreamItem: QFCodable {
-    struct GLLiveStreamItemExtend: QFCodable {
+struct GLLiveStreamItem: QFDecodable {
+    struct GLLiveStreamItemExtend: QFDecodable {
         var gearInfo: String?
         var line_infos: String?
         var stage: Int?
@@ -36,7 +36,7 @@ struct GLLiveStreamItem: QFCodable {
 }
 
 
-struct GLLiveStreamExtend: QFCodable {
+struct GLLiveStreamExtend: QFDecodable {
     var layout: String?
     var uid64: Int?
 }

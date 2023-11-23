@@ -7,7 +7,7 @@
 
 @testable import QFCodable
 
-enum GLAnchorChannelType: Int, QFCodable {
+enum GLAnchorChannelType: Int, QFDecodable {
     case unknown = -1
     case normal = 0
     case official = 1
@@ -18,7 +18,7 @@ enum GLAnchorChannelType: Int, QFCodable {
     case voiceUnion = 6
 }
 
-final class GLAnchorDataVOModel: QFCodable {
+final class GLAnchorDataVOModel: QFDecodable {
     var uid: Int
     var sid: Int
     var ssid: Int?

@@ -7,7 +7,7 @@
 
 @testable import QFCodable
 
-public struct GLBannerDataVOModel: Equatable, QFCodable {
+public struct GLBannerDataVOModel: Equatable, QFDecodable {
     var id: Int?
     var img: String?
     var ordering: Int?

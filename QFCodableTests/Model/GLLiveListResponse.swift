@@ -7,7 +7,7 @@
 
 @testable import QFCodable
 
-struct GLLiveListResponse: QFCodable {
+struct GLLiveListResponse: QFDecodable {
     var id: Int?
     var biz: String?
     var subBiz: String?
@@ -19,7 +19,7 @@ struct GLLiveListResponse: QFCodable {
     var moduleType: String?
 }
 
-enum GLLiveListItemType: Int, QFCodable {
+enum GLLiveListItemType: Int, QFDecodable {
     case unknown = -1
     case live = 1
     case banner = 2
@@ -30,7 +30,7 @@ enum GLLiveListItemType: Int, QFCodable {
     }
 }
 
-struct GLLiveListItem: QFCodable {
+struct GLLiveListItem: QFDecodable {
     var type: GLLiveListItemType
     var bannerDataVO: [GLBannerDataVOModel]?
     var anchorDataVO: GLAnchorDataVOModel?

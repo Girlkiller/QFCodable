@@ -1,6 +1,6 @@
 //
-//  QFCodable.swift
-//  QFCodable
+//  QFDecodable.swift
+//  QFDecodable
 //
 //  Created by FengQIU on 2023/11/2.
 //
@@ -118,14 +118,14 @@ extension Array: QFCodableKeysMapperValue where Element == String {
     }
 }
 
-public protocol QFCodable: Codable {
+public protocol QFDecodable: Codable {
     static var modelCustomPropertyMapper: [String: QFCodableKeysMapperValue]? { get }
     static func decodingDefaultValue<CodingKeys: CodingKey>(for key: CodingKeys) -> Any?
     static func shouldUseDefaultValue() -> Bool
     static func allowedTrueValues() -> [Any]?
 }
 
-public extension QFCodable {
+public extension QFDecodable {
     static var modelCustomPropertyMapper: [String: QFCodableKeysMapperValue]? { nil }
     
     static func decodingDefaultValue<CodingKeys: CodingKey>(for key: CodingKeys) -> Any? {
@@ -142,7 +142,7 @@ public extension QFCodable {
     }
 }
 
-public extension QFCodable {
+public extension QFDecodable {
     init?(from data: Any?) {
         guard let data = data else { return nil }
         do {
@@ -174,10 +174,10 @@ public extension QFCodable {
     }
 }
 
-extension Array: QFCodable where Array.Element: QFCodable {
+extension Array: QFDecodable where Array.Element: QFDecodable {
     
 }
 
-extension Dictionary: QFCodable where Dictionary.Key: QFCodable, Dictionary.Value: QFCodable {
+extension Dictionary: QFDecodable where Dictionary.Key: QFDecodable, Dictionary.Value: QFDecodable {
     
 }

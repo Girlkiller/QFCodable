@@ -32,7 +32,7 @@ extension Encodable {
         return jsonString
     }
     
-    public func toModel<T: QFCodable>() -> T? {
+    public func toModel<T: QFDecodable>() -> T? {
         guard let data = jsonData() else { return nil }
         let model = T(from: data)
         return model

@@ -81,7 +81,7 @@ fileprivate class QFJSONDecoderImpl {
 
     let json: QFJSONValue
     let options: QFJSONDecoder._Options
-    var decodeType: QFCodable.Type?
+    var decodeType: QFDecodable.Type?
 
     init(userInfo: [CodingUserInfoKey: Any],
          from json: QFJSONValue,
@@ -167,8 +167,8 @@ extension QFJSONDecoderImpl: Decoder {
     // MARK: Special case handling
 
     func unwrap<T: Decodable>(as type: T.Type) throws -> T {
-        if type is QFCodable.Type {
-            decodeType = type as? QFCodable.Type
+        if type is QFDecodable.Type {
+            decodeType = type as? QFDecodable.Type
         }
         
         if type == Date.self {
