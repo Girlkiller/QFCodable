@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'QFCodable'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.license = 'Apache License 2.0'
   s.summary = 'Decode data to model in Swift'
   s.homepage = 'https://github.com/Girlkiller/QFCodable'
