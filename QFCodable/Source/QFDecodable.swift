@@ -71,6 +71,12 @@ extension Int64: QFCodableDefaultValue {
     }
 }
 
+extension UInt64: QFCodableDefaultValue {
+    public static func codableDefaultValue() -> UInt64 {
+        0
+    }
+}
+
 extension Float: QFCodableDefaultValue {
     public static func codableDefaultValue() -> Float {
         0.0

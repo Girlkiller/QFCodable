@@ -8,12 +8,18 @@
 import Foundation
 
 extension Encodable {
-    public func jsonData() -> Data? {
+    public func jsonData(prettyPrinted: Bool = false) -> Data? {
         if self is String {
            return (self as? String)?.data(using: .utf8)
         }
         let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+        if prettyPrinted {
+            encoder.outputFormatting = .prettyPrinted
+        } else {
+            if #available(iOS 13.0, *) {
+                encoder.outputFormatting = .withoutEscapingSlashes
+            }
+        }
         encoder.dateEncodingStrategy = .iso8601
         return try? encoder.encode(self)
     }
@@ -27,8 +33,8 @@ extension Encodable {
         return dictionary
     }
     
-    public func jsonString() -> String? {
-        guard let data = jsonData(), let jsonString = String(data: data, encoding: .utf8) else { return nil }
+    public func jsonString(prettyPrinted: Bool = false) -> String? {
+        guard let data = jsonData(prettyPrinted: prettyPrinted), let jsonString = String(data: data, encoding: .utf8) else { return nil }
         return jsonString
     }
     
