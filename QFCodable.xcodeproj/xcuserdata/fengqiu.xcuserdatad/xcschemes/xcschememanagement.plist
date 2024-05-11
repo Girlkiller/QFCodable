@@ -6,13 +6,35 @@
 	<dict>
 		<key>QFCodable.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 		<key>QFCodableDemo.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A63183FB2AF9D7E40049D32E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A63184052AF9D7E50049D32E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A63184192AF9D81C0049D32E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
