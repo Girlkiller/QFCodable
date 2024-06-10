@@ -726,6 +726,10 @@ extension QFJSONDecoderImpl {
                     if let type = T.self as? QFCodableDefaultValue.Type, let value = type.codableDefaultValue() as? T {
                         return value
                     }
+                    let enumResult = isEnum(type)
+                    if enumResult.0 {
+                        return enumResult.1
+                    }
                 }
                 throw error
             }
@@ -778,6 +782,26 @@ extension QFJSONDecoderImpl {
                 codingPath: newPath,
                 options: self.impl.options
             )
+        }
+        
+        private func isEnum<T>(_: T.Type) -> (Bool, T) {
+            var result = false
+            // Allocate memory with size and alignment matching T.
+            let bytesPointer = UnsafeMutableRawPointer.allocate(
+                byteCount: MemoryLayout<T>.size,
+                alignment: MemoryLayout<T>.alignment)
+            // Bind memory to T and perform introspection on the instance
+            // reference to by the bound memory.
+            let value =  bytesPointer.bindMemory(to: T.self, capacity: 1).pointee
+            if case .some(.`enum`) = Mirror(reflecting: value).displayStyle {
+                print("value: \(value) Is an enum")
+                result = true
+            } else {
+                print("value: \(value) Is not an enum")
+            }
+            // Deallocate the manually allocate memory.
+            bytesPointer.deallocate()
+            return (result, value)
         }
 
         @inline(__always) private func getValue<LocalKey: CodingKey>(forKey key: LocalKey) throws -> QFJSONValue {
