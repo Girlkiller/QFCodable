@@ -27,7 +27,7 @@ extension Dictionary: _JSONStringDictionaryDecodableMarker where Key == String, 
     static var elementType: Decodable.Type { return Value.self }
 }
 
-public class QFJSONDecoder: JSONDecoder {
+public class QFJSONDecoder: JSONDecoder, @unchecked Sendable {
     fileprivate struct _Options {
         let dateDecodingStrategy: DateDecodingStrategy
         let dataDecodingStrategy: DataDecodingStrategy

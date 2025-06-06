@@ -95,6 +95,7 @@ extension Double: QFCodableDefaultValue {
     }
 }
 
+@available(macOS 11.0, *)
 @available(iOS 14.0, *)
 extension Float16: QFCodableDefaultValue {
     public static func codableDefaultValue() -> Float16 {
@@ -161,10 +162,13 @@ public extension QFDecodable {
     
     init?(data: Any?) throws {
         guard let data = data else { return nil }
+
         let decoder = QFJSONDecoder()
-        if #available(iOS 15.0, *) {
+
+        if #available(iOS 15.0, macOS 12.0, *) {
             decoder.allowsJSON5 = true
         }
+
         self = try decoder.decode(Self.self, from: data)
     }
     

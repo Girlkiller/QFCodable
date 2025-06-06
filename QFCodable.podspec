@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
 
   s.swift_versions = ['5']
 
-  s.source_files = 'QFCodable/Source/*.swift'
+  s.source_files = 'QFCodable/Sources/QFCodable/*.swift'
 
 end

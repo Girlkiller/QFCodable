@@ -16,7 +16,7 @@ extension Encodable {
         if prettyPrinted {
             encoder.outputFormatting = .prettyPrinted
         } else {
-            if #available(iOS 13.0, *) {
+            if #available(iOS 13.0, macOS 12.0, *) {
                 encoder.outputFormatting = .withoutEscapingSlashes
             }
         }

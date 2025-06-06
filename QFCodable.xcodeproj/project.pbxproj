@@ -7,22 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A63184012AF9D7E40049D32E /* QFCodable.docc in Sources */ = {isa = PBXBuildFile; fileRef = A63184002AF9D7E40049D32E /* QFCodable.docc */; };
 		A63184072AF9D7E50049D32E /* QFCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63183FC2AF9D7E40049D32E /* QFCodable.framework */; };
 		A631840C2AF9D7E50049D32E /* QFCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631840B2AF9D7E50049D32E /* QFCodableTests.swift */; };
-		A631840D2AF9D7E50049D32E /* QFCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = A63183FF2AF9D7E40049D32E /* QFCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A631841D2AF9D81C0049D32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631841C2AF9D81C0049D32E /* AppDelegate.swift */; };
 		A631841F2AF9D81C0049D32E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631841E2AF9D81C0049D32E /* SceneDelegate.swift */; };
 		A63184212AF9D81C0049D32E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63184202AF9D81C0049D32E /* ViewController.swift */; };
 		A63184242AF9D81C0049D32E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63184222AF9D81C0049D32E /* Main.storyboard */; };
 		A63184262AF9D81E0049D32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63184252AF9D81E0049D32E /* Assets.xcassets */; };
 		A63184292AF9D81E0049D32E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63184272AF9D81E0049D32E /* LaunchScreen.storyboard */; };
-		A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C162AF9D9070049D32E /* QFJSONParser.swift */; };
-		A6318C242AF9D9080049D32E /* QFJSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C192AF9D9070049D32E /* QFJSONError.swift */; };
-		A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */; };
-		A6318C272AF9D9080049D32E /* QFDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1C2AF9D9070049D32E /* QFDecodable.swift */; };
-		A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */; };
-		A6318C292AF9D9080049D32E /* QFJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */; };
 		A6318C372AF9E0530049D32E /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = A6318C2D2AF9E0530049D32E /* example.json */; };
 		A6318C382AF9E0530049D32E /* GLOnMicUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C2F2AF9E0530049D32E /* GLOnMicUserInfo.swift */; };
 		A6318C392AF9E0530049D32E /* GLChallengeAwardVOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C302AF9E0530049D32E /* GLChallengeAwardVOModel.swift */; };
@@ -41,6 +33,14 @@
 		A6318C4A2AFA0EA00049D32E /* QFCodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A63183FC2AF9D7E40049D32E /* QFCodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A631BA1F2AFB3C040049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
 		A631BA202AFB3C040049D32E /* QFReusableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6318C182AF9D9070049D32E /* QFReusableResponse.swift */; };
+		A6AD5E4E2DF2978200185700 /* QFJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E4A2DF2978200185700 /* QFJSONParser.swift */; };
+		A6AD5E4F2DF2978200185700 /* QFDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E472DF2978200185700 /* QFDecodable.swift */; };
+		A6AD5E502DF2978200185700 /* QFCodable.docc in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E462DF2978200185700 /* QFCodable.docc */; };
+		A6AD5E512DF2978200185700 /* QFJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E482DF2978200185700 /* QFJSONDecoder.swift */; };
+		A6AD5E522DF2978200185700 /* Encodable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E442DF2978200185700 /* Encodable+Json.swift */; };
+		A6AD5E532DF2978200185700 /* QFJSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E4B2DF2978200185700 /* QFJSONValue.swift */; };
+		A6AD5E542DF2978200185700 /* QFJSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD5E492DF2978200185700 /* QFJSONError.swift */; };
+		A6AD5E552DF2978200185700 /* QFCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AD5E452DF2978200185700 /* QFCodable.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +76,6 @@
 
 /* Begin PBXFileReference section */
 		A63183FC2AF9D7E40049D32E /* QFCodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QFCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63183FF2AF9D7E40049D32E /* QFCodable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFCodable.h; sourceTree = "<group>"; };
-		A63184002AF9D7E40049D32E /* QFCodable.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QFCodable.docc; sourceTree = "<group>"; };
 		A63184062AF9D7E50049D32E /* QFCodableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QFCodableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A631840B2AF9D7E50049D32E /* QFCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableTests.swift; sourceTree = "<group>"; };
 		A631841A2AF9D81C0049D32E /* QFCodableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QFCodableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,13 +89,7 @@
 		A63184332AF9D81F0049D32E /* QFCodableDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableDemoTests.swift; sourceTree = "<group>"; };
 		A631843D2AF9D81F0049D32E /* QFCodableDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableDemoUITests.swift; sourceTree = "<group>"; };
 		A631843F2AF9D81F0049D32E /* QFCodableDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFCodableDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A6318C162AF9D9070049D32E /* QFJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONParser.swift; sourceTree = "<group>"; };
 		A6318C182AF9D9070049D32E /* QFReusableResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFReusableResponse.swift; sourceTree = "<group>"; };
-		A6318C192AF9D9070049D32E /* QFJSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONError.swift; sourceTree = "<group>"; };
-		A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Json.swift"; sourceTree = "<group>"; };
-		A6318C1C2AF9D9070049D32E /* QFDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFDecodable.swift; sourceTree = "<group>"; };
-		A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONValue.swift; sourceTree = "<group>"; };
-		A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFJSONDecoder.swift; sourceTree = "<group>"; };
 		A6318C2D2AF9E0530049D32E /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 		A6318C2F2AF9E0530049D32E /* GLOnMicUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLOnMicUserInfo.swift; sourceTree = "<group>"; };
 		A6318C302AF9E0530049D32E /* GLChallengeAwardVOModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLChallengeAwardVOModel.swift; sourceTree = "<group>"; };
@@ -105,6 +97,14 @@
 		A6318C332AF9E0530049D32E /* GLLiveStreamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLLiveStreamInfo.swift; sourceTree = "<group>"; };
 		A6318C342AF9E0530049D32E /* GLBannerDataVOModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLBannerDataVOModel.swift; sourceTree = "<group>"; };
 		A6318C362AF9E0530049D32E /* GLAnchorDataVOModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLAnchorDataVOModel.swift; sourceTree = "<group>"; };
+		A6AD5E442DF2978200185700 /* Encodable+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Json.swift"; sourceTree = "<group>"; };
+		A6AD5E452DF2978200185700 /* QFCodable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFCodable.h; sourceTree = "<group>"; };
+		A6AD5E462DF2978200185700 /* QFCodable.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QFCodable.docc; sourceTree = "<group>"; };
+		A6AD5E472DF2978200185700 /* QFDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFDecodable.swift; sourceTree = "<group>"; };
+		A6AD5E482DF2978200185700 /* QFJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFJSONDecoder.swift; sourceTree = "<group>"; };
+		A6AD5E492DF2978200185700 /* QFJSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFJSONError.swift; sourceTree = "<group>"; };
+		A6AD5E4A2DF2978200185700 /* QFJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFJSONParser.swift; sourceTree = "<group>"; };
+		A6AD5E4B2DF2978200185700 /* QFJSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QFJSONValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 		A63183F22AF9D7E40049D32E = {
 			isa = PBXGroup;
 			children = (
-				A63183FE2AF9D7E40049D32E /* QFCodable */,
+				A6AD5E4D2DF2978200185700 /* Sources */,
 				A631840A2AF9D7E50049D32E /* QFCodableTests */,
 				A631841B2AF9D81C0049D32E /* QFCodableDemo */,
 				A63184322AF9D81F0049D32E /* QFCodableDemoTests */,
@@ -155,16 +155,6 @@
 				A631841A2AF9D81C0049D32E /* QFCodableDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A63183FE2AF9D7E40049D32E /* QFCodable */ = {
-			isa = PBXGroup;
-			children = (
-				A631844A2AF9D8470049D32E /* Source */,
-				A63183FF2AF9D7E40049D32E /* QFCodable.h */,
-				A63184002AF9D7E40049D32E /* QFCodable.docc */,
-			);
-			path = QFCodable;
 			sourceTree = "<group>";
 		};
 		A631840A2AF9D7E50049D32E /* QFCodableTests */ = {
@@ -208,19 +198,6 @@
 			path = QFCodableDemoUITests;
 			sourceTree = "<group>";
 		};
-		A631844A2AF9D8470049D32E /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				A6318C1B2AF9D9070049D32E /* Encodable+Json.swift */,
-				A6318C1C2AF9D9070049D32E /* QFDecodable.swift */,
-				A6318C1E2AF9D9070049D32E /* QFJSONDecoder.swift */,
-				A6318C192AF9D9070049D32E /* QFJSONError.swift */,
-				A6318C162AF9D9070049D32E /* QFJSONParser.swift */,
-				A6318C1D2AF9D9070049D32E /* QFJSONValue.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		A6318C2C2AF9E0530049D32E /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +227,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A6AD5E4C2DF2978200185700 /* QFCodable */ = {
+			isa = PBXGroup;
+			children = (
+				A6AD5E442DF2978200185700 /* Encodable+Json.swift */,
+				A6AD5E452DF2978200185700 /* QFCodable.h */,
+				A6AD5E462DF2978200185700 /* QFCodable.docc */,
+				A6AD5E472DF2978200185700 /* QFDecodable.swift */,
+				A6AD5E482DF2978200185700 /* QFJSONDecoder.swift */,
+				A6AD5E492DF2978200185700 /* QFJSONError.swift */,
+				A6AD5E4A2DF2978200185700 /* QFJSONParser.swift */,
+				A6AD5E4B2DF2978200185700 /* QFJSONValue.swift */,
+			);
+			path = QFCodable;
+			sourceTree = "<group>";
+		};
+		A6AD5E4D2DF2978200185700 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A6AD5E4C2DF2978200185700 /* QFCodable */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -257,7 +257,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A631840D2AF9D7E50049D32E /* QFCodable.h in Headers */,
+				A6AD5E552DF2978200185700 /* QFCodable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,13 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6318C262AF9D9080049D32E /* Encodable+Json.swift in Sources */,
-				A6318C282AF9D9080049D32E /* QFJSONValue.swift in Sources */,
-				A6318C272AF9D9080049D32E /* QFDecodable.swift in Sources */,
-				A6318C292AF9D9080049D32E /* QFJSONDecoder.swift in Sources */,
-				A63184012AF9D7E40049D32E /* QFCodable.docc in Sources */,
-				A6318C222AF9D9070049D32E /* QFJSONParser.swift in Sources */,
-				A6318C242AF9D9080049D32E /* QFJSONError.swift in Sources */,
+				A6AD5E4E2DF2978200185700 /* QFJSONParser.swift in Sources */,
+				A6AD5E4F2DF2978200185700 /* QFDecodable.swift in Sources */,
+				A6AD5E502DF2978200185700 /* QFCodable.docc in Sources */,
+				A6AD5E512DF2978200185700 /* QFJSONDecoder.swift in Sources */,
+				A6AD5E522DF2978200185700 /* Encodable+Json.swift in Sources */,
+				A6AD5E532DF2978200185700 /* QFJSONValue.swift in Sources */,
+				A6AD5E542DF2978200185700 /* QFJSONError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,7 +674,6 @@
 		A63184142AF9D7E50049D32E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 823N2N48CG;
@@ -693,7 +692,6 @@
 		A63184152AF9D7E50049D32E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 823N2N48CG;
