@@ -196,13 +196,23 @@ extension QFJSONDecoderImpl: Decoder {
 
         case .secondsSince1970:
             let container = QFSingleValueContainer(impl: self, codingPath: self.codingPath, json: self.json)
-            let double = try container.decode(Double.self)
-            return Date(timeIntervalSince1970: double)
+            do {
+                let intValue = try container.decode(Int64.self)
+                return Date(timeIntervalSince1970: TimeInterval(intValue))
+            } catch {
+                let double = try container.decode(Double.self)
+                return Date(timeIntervalSince1970: double)
+            }
 
         case .millisecondsSince1970:
             let container = QFSingleValueContainer(impl: self, codingPath: self.codingPath, json: self.json)
-            let double = try container.decode(Double.self)
-            return Date(timeIntervalSince1970: double / 1000.0)
+            do {
+                let intValue = try container.decode(Int64.self)
+                return Date(timeIntervalSince1970: TimeInterval(intValue) / 1000.0)
+            } catch {
+                let double = try container.decode(Double.self)
+                return Date(timeIntervalSince1970: double / 1000.0)
+            }
 
         case .iso8601:
             if #available(macOS 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *) {

@@ -77,6 +77,20 @@ extension UInt64: QFCodableDefaultValue {
     }
 }
 
+@available(iOS 18.0, *)
+extension Int128: QFCodableDefaultValue {
+    public static func codableDefaultValue() -> Int128 {
+        0
+    }
+}
+
+@available(iOS 18.0, *)
+extension UInt128: QFCodableDefaultValue {
+    public static func codableDefaultValue() -> UInt128 {
+        0
+    }
+}
+
 extension Float: QFCodableDefaultValue {
     public static func codableDefaultValue() -> Float {
         0.0
@@ -145,7 +159,7 @@ public extension QFDecodable {
     
     /// will convert to lowercase words to compare
     static func allowedTrueValues() -> [Any]? {
-        [true, 1, "1", "True", "yes"]
+        [true, 1, "1", "True", "yes", "ok", "OK"]
     }
 }
 
