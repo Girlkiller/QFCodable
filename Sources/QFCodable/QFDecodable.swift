@@ -123,6 +123,18 @@ extension String: QFCodableDefaultValue {
     }
 }
 
+extension Array: QFCodableDefaultValue {
+    public static func codableDefaultValue() -> Array {
+        []
+    }
+}
+
+extension Dictionary: QFCodableDefaultValue {
+    public static func codableDefaultValue() -> Dictionary {
+        [:]
+    }
+}
+
 public protocol QFCodableKeysMapperValue {
     var mappingKeys: [String] { get }
 }
@@ -144,6 +156,7 @@ public protocol QFDecodable: Codable {
     static func decodingDefaultValue<CodingKeys: CodingKey>(for key: CodingKeys) -> Any?
     static func shouldUseDefaultValue() -> Bool
     static func allowedTrueValues() -> [Any]?
+    static func dateDecodingStrategy() -> JSONDecoder.DateDecodingStrategy?
 }
 
 public extension QFDecodable {
@@ -160,6 +173,10 @@ public extension QFDecodable {
     /// will convert to lowercase words to compare
     static func allowedTrueValues() -> [Any]? {
         [true, 1, "1", "True", "yes", "ok", "OK"]
+    }
+
+    static func dateDecodingStrategy() -> JSONDecoder.DateDecodingStrategy? {
+        .iso8601
     }
 }
 

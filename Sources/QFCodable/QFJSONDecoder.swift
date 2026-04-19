@@ -29,7 +29,7 @@ extension Dictionary: _JSONStringDictionaryDecodableMarker where Key == String, 
 
 public class QFJSONDecoder: JSONDecoder, @unchecked Sendable {
     fileprivate struct _Options {
-        let dateDecodingStrategy: DateDecodingStrategy
+        var dateDecodingStrategy: DateDecodingStrategy
         let dataDecodingStrategy: DataDecodingStrategy
         let nonConformingFloatDecodingStrategy: NonConformingFloatDecodingStrategy
         let keyDecodingStrategy: KeyDecodingStrategy
@@ -80,7 +80,7 @@ fileprivate class QFJSONDecoderImpl {
     let userInfo: [CodingUserInfoKey: Any]
 
     let json: QFJSONValue
-    let options: QFJSONDecoder._Options
+    var options: QFJSONDecoder._Options
     var decodeType: QFDecodable.Type?
 
     init(userInfo: [CodingUserInfoKey: Any],
@@ -91,6 +91,7 @@ fileprivate class QFJSONDecoderImpl {
         self.codingPath = codingPath
         self.json = json
         self.options = options
+        self.options.dateDecodingStrategy = decodeType?.dateDecodingStrategy() ?? options.dateDecodingStrategy
     }
 }
 
