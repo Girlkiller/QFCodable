@@ -31,9 +31,9 @@ enum QFJSONValue: Equatable {
 extension QFJSONValue {
     var isValue: Bool {
         switch self {
-        case .array, .object:
+        case .array, .object, .null:
             return false
-        case .null, .number, .string, .bool:
+        case .number, .string, .bool:
             return true
         }
     }
