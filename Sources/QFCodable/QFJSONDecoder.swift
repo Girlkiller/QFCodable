@@ -815,46 +815,34 @@ extension QFJSONDecoderImpl {
             return (result, value)
         }
 
-        @inline(__always)
-        private func getValue<LocalKey: CodingKey>(forKey key: LocalKey) throws -> QFJSONValue {
-
-            // ✅ 先查原始 key，但要过滤 null
-            if let value = dictionary[key.stringValue], value.isValue {
-                return value
-            }
-
-            // ✅ 再走 mapper fallback
-            if let mapper = impl.modelCustomPropertyMapper?[key.stringValue] {
-                for item in mapper.mappingKeys {
-
-                    if let value = dictionary[item], value.isValue {
-                        return value
-                    }
-
-                    var list = item.split(separator: ".")
-                    var nextKey = String(list.removeFirst())
-                    var nextValue = dictionary[nextKey]
-
-                    while !list.isEmpty, nextValue != nil {
-                        nextKey = String(list.removeFirst())
-                        if case .object(let nextDictionary) = nextValue {
-                            nextValue = nextDictionary[nextKey]
+        @inline(__always) private func getValue<LocalKey: CodingKey>(forKey key: LocalKey) throws -> QFJSONValue {
+            guard let value = dictionary[key.stringValue], !value.isNull else {
+                if let mapper = impl.modelCustomPropertyMapper?[key.stringValue] {
+                    for item in mapper.mappingKeys {
+                        if let value = dictionary[item] {
+                            return value
+                        }
+                        var list = item.split(separator: ".")
+                        var nextKey = String(list.removeFirst())
+                        var nextValue = dictionary[nextKey]
+                        while !list.isEmpty, nextValue != nil {
+                            nextKey = String(list.removeFirst())
+                            if case .object(let nextDictionary) = nextValue {
+                                nextValue = nextDictionary[nextKey]
+                            }
+                        }
+                        if let value = nextValue {
+                            return value
                         }
                     }
-
-                    if let value = nextValue, value.isValue {
-                        return value
-                    }
                 }
-            }
-
-            throw DecodingError.keyNotFound(
-                key,
-                .init(
+                throw DecodingError.keyNotFound(key, .init(
                     codingPath: self.codingPath,
                     debugDescription: "No value associated with key \(key) (\"\(key.stringValue)\")."
-                )
-            )
+                ))
+            }
+
+            return value
         }
 
         @inline(__always) private func createTypeMismatchError(type: Any.Type, forKey key: K, value: QFJSONValue) -> DecodingError {
