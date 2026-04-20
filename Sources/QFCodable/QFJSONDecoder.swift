@@ -507,6 +507,7 @@ extension QFJSONDecoderImpl {
             try decodeFloatingPoint()
         }
 
+
         func decode(_: Float.Type) throws -> Float {
             try decodeFloatingPoint()
         }
@@ -649,6 +650,29 @@ extension QFJSONDecoderImpl {
             }
         }
 
+        func decodeIfPresent(_ type: Bool.Type, forKey key: K) throws -> Bool? {
+            do {
+                let value = try getValue(forKey: key)
+
+                // null → nil（符合 Optional 语义）
+                if value.isNull {
+                    return nil
+                }
+
+                if case .bool(let boolValue) = value {
+                    return boolValue
+                }
+
+                if let boolValue = value.boolValue(with: impl.allowedTrueValues()) {
+                    return boolValue
+                }
+                return nil
+            } catch {
+                // key 不存在 → nil
+                return nil
+            }
+        }
+
         func decode(_ type: String.Type, forKey key: K) throws -> String {
             do {
                 let value = try getValue(forKey: key)
@@ -677,52 +701,120 @@ extension QFJSONDecoderImpl {
             }
         }
 
+        func decodeIfPresent(_ type: String.Type, forKey key: K) throws -> String? {
+            do {
+                let value = try getValue(forKey: key)
+
+                // null → nil（符合 Optional 语义）
+                if value.isNull {
+                    return nil
+                }
+
+                if case .string(let string) = value {
+                    return string
+                }
+
+                return value.stringValue
+            } catch {
+                // key 不存在 → nil
+                return nil
+            }
+        }
+
         func decode(_: Double.Type, forKey key: K) throws -> Double {
             try decodeFloatingPoint(key: key)
+        }
+
+        func decodeIfPresent(_ type: Double.Type, forKey key: K) throws -> Double? {
+            try? decodeFloatingPoint(key: key)
         }
 
         func decode(_: Float.Type, forKey key: K) throws -> Float {
             try decodeFloatingPoint(key: key)
         }
 
+        func decodeIfPresent(_ type: Float.Type, forKey key: K) throws -> Float? {
+            try? decodeFloatingPoint(key: key)
+        }
+
         func decode(_: Int.Type, forKey key: K) throws -> Int {
             try decodeFixedWidthInteger(key: key)
+        }
+
+        func decodeIfPresent(_ type: Int.Type, forKey key: K) throws -> Int? {
+            try? decodeFixedWidthInteger(key: key)
         }
 
         func decode(_: Int8.Type, forKey key: K) throws -> Int8 {
             try decodeFixedWidthInteger(key: key)
         }
 
+        func decodeIfPresent(_ type: Int8.Type, forKey key: K) throws -> Int8? {
+            try? decodeFixedWidthInteger(key: key)
+        }
+
         func decode(_: Int16.Type, forKey key: K) throws -> Int16 {
             try decodeFixedWidthInteger(key: key)
+        }
+
+        func decodeIfPresent(_ type: Int16.Type, forKey key: K) throws -> Int16? {
+            try? decodeFixedWidthInteger(key: key)
         }
 
         func decode(_: Int32.Type, forKey key: K) throws -> Int32 {
             try decodeFixedWidthInteger(key: key)
         }
 
+        func decodeIfPresent(_ type: Int32.Type, forKey key: K) throws -> Int32? {
+            try? decodeFixedWidthInteger(key: key)
+        }
+
         func decode(_: Int64.Type, forKey key: K) throws -> Int64 {
             try decodeFixedWidthInteger(key: key)
+        }
+
+        func decodeIfPresent(_ type: Int64.Type, forKey key: K) throws -> Int64? {
+            try? decodeFixedWidthInteger(key: key)
         }
 
         func decode(_: UInt.Type, forKey key: K) throws -> UInt {
             try decodeFixedWidthInteger(key: key)
         }
 
+        func decodeIfPresent(_ type: UInt.Type, forKey key: K) throws -> UInt? {
+            try? decodeFixedWidthInteger(key: key)
+        }
+
         func decode(_: UInt8.Type, forKey key: K) throws -> UInt8 {
             try decodeFixedWidthInteger(key: key)
+        }
+
+        func decodeIfPresent(_ type: UInt8.Type, forKey key: K) throws -> UInt8? {
+            try? decodeFixedWidthInteger(key: key)
         }
 
         func decode(_: UInt16.Type, forKey key: K) throws -> UInt16 {
             try decodeFixedWidthInteger(key: key)
         }
 
+        func decodeIfPresent(_ type: UInt16.Type, forKey key: K) throws -> UInt16? {
+            try? decodeFixedWidthInteger(key: key)
+        }
+
         func decode(_: UInt32.Type, forKey key: K) throws -> UInt32 {
             try decodeFixedWidthInteger(key: key)
         }
 
+        func decodeIfPresent(_ type: UInt32.Type, forKey key: K) throws -> UInt32? {
+            try? decodeFixedWidthInteger(key: key)
+        }
+
         func decode(_: UInt64.Type, forKey key: K) throws -> UInt64 {
             try decodeFixedWidthInteger(key: key)
+        }
+
+        func decodeIfPresent(_ type: UInt64.Type, forKey key: K) throws -> UInt64? {
+            try? decodeFixedWidthInteger(key: key)
         }
 
         func decode<T>(_ type: T.Type, forKey key: K) throws -> T where T: Decodable {
@@ -743,6 +835,27 @@ extension QFJSONDecoderImpl {
                     }
                 }
                 throw error
+            }
+        }
+
+        func decodeIfPresent<T>(_ type: T.Type, forKey key: K) throws -> T? where T : Decodable {
+            do {
+                let newDecoder = try decoderForKey(key)
+                return try newDecoder.unwrap(as: type)
+            } catch {
+                if impl.shouldUseDefaultValue() {
+                    if let value = impl.decodingDefaultValue(for: key) as? T {
+                        return value
+                    }
+                    if let type = T.self as? QFCodableDefaultValue.Type, let value = type.codableDefaultValue() as? T {
+                        return value
+                    }
+                    let enumResult = isEnum(type)
+                    if enumResult.0 {
+                        return enumResult.1
+                    }
+                }
+                return nil
             }
         }
 
@@ -951,48 +1064,96 @@ extension QFJSONDecoderImpl {
             try decodeFloatingPoint()
         }
 
+        mutating func decodeIfPresent(_ type: Double.Type) throws -> Double? {
+            try? decodeFloatingPoint()
+        }
+
         mutating func decode(_: Float.Type) throws -> Float {
             try decodeFloatingPoint()
+        }
+
+        mutating func decodeIfPresent(_ type: Float.Type) throws -> Float? {
+            try? decodeFloatingPoint()
         }
 
         mutating func decode(_: Int.Type) throws -> Int {
             try decodeFixedWidthInteger()
         }
 
+        mutating func decodeIfPresent(_ type: Int.Type) throws -> Int? {
+            try? decodeFixedWidthInteger()
+        }
+
         mutating func decode(_: Int8.Type) throws -> Int8 {
             try decodeFixedWidthInteger()
+        }
+
+        mutating func decodeIfPresent(_ type: Int8.Type) throws -> Int8? {
+            try? decodeFixedWidthInteger()
         }
 
         mutating func decode(_: Int16.Type) throws -> Int16 {
             try decodeFixedWidthInteger()
         }
 
+        mutating func decodeIfPresent(_ type: Int16.Type) throws -> Int16? {
+            try? decodeFixedWidthInteger()
+        }
+
         mutating func decode(_: Int32.Type) throws -> Int32 {
             try decodeFixedWidthInteger()
+        }
+
+        mutating func decodeIfPresent(_ type: Int32.Type) throws -> Int32? {
+            try? decodeFixedWidthInteger()
         }
 
         mutating func decode(_: Int64.Type) throws -> Int64 {
             try decodeFixedWidthInteger()
         }
 
+        mutating func decodeIfPresent(_ type: Int64.Type) throws -> Int64? {
+            try? decodeFixedWidthInteger()
+        }
+
         mutating func decode(_: UInt.Type) throws -> UInt {
             try decodeFixedWidthInteger()
+        }
+
+        mutating func decodeIfPresent(_ type: UInt.Type) throws -> UInt? {
+            try? decodeFixedWidthInteger()
         }
 
         mutating func decode(_: UInt8.Type) throws -> UInt8 {
             try decodeFixedWidthInteger()
         }
 
+        mutating func decodeIfPresent(_ type: UInt8.Type) throws -> UInt8? {
+            try? decodeFixedWidthInteger()
+        }
+
         mutating func decode(_: UInt16.Type) throws -> UInt16 {
             try decodeFixedWidthInteger()
+        }
+
+        mutating func decodeIfPresent(_ type: UInt16.Type) throws -> UInt16? {
+            try? decodeFixedWidthInteger()
         }
 
         mutating func decode(_: UInt32.Type) throws -> UInt32 {
             try decodeFixedWidthInteger()
         }
 
+        mutating func decodeIfPresent(_ type: UInt32.Type) throws -> UInt32? {
+            try? decodeFixedWidthInteger()
+        }
+
         mutating func decode(_: UInt64.Type) throws -> UInt64 {
             try decodeFixedWidthInteger()
+        }
+
+        mutating func decodeIfPresent(_ type: UInt64.Type) throws -> UInt64? {
+            try? decodeFixedWidthInteger()
         }
 
         mutating func decode<T>(_ type: T.Type) throws -> T where T: Decodable {
@@ -1005,6 +1166,22 @@ extension QFJSONDecoderImpl {
             // doesn't get copied around.
             self.currentIndex += 1
             return result
+        }
+
+        mutating func decodeIfPresent<T>(_ type: T.Type) throws -> T? where T : Decodable {
+            do {
+                let newDecoder = try decoderForNextElement(ofType: type)
+                let result = try newDecoder.unwrap(as: type)
+
+                // Because of the requirement that the index not be incremented unless
+                // decoding the desired result type succeeds, it can not be a tail call.
+                // Hopefully the compiler still optimizes well enough that the result
+                // doesn't get copied around.
+                self.currentIndex += 1
+                return result
+            } catch {
+                return nil
+            }
         }
 
         mutating func nestedContainer<NestedKey>(keyedBy type: NestedKey.Type) throws
