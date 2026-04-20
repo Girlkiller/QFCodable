@@ -816,7 +816,7 @@ extension QFJSONDecoderImpl {
         }
 
         @inline(__always) private func getValue<LocalKey: CodingKey>(forKey key: LocalKey) throws -> QFJSONValue {
-            guard let value = dictionary[key.stringValue], !value.isNull else {
+            guard let value = dictionary[key.stringValue] else {
                 if let mapper = impl.modelCustomPropertyMapper?[key.stringValue] {
                     for item in mapper.mappingKeys {
                         if let value = dictionary[item] {
